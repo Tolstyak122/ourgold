@@ -16,3 +16,5 @@ yarn-error.log
 /.vscode
 resources/js/app.js
 resources/css/app.css
+public/js/app.js
+public/mix-manifest.json
