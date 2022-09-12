@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('appartments', [\App\Http\Controllers\ApiController::class, 'appartments'])->name('appartments');
+Route::get('locations', [\App\Http\Controllers\ApiController::class, 'locations'])->name('locations');
+Route::get('room_types', [\App\Http\Controllers\ApiController::class, 'room_types'])->name('room_types');
+Route::get('furnitures', [\App\Http\Controllers\ApiController::class, 'furnitures'])->name('furnitures');
+Route::get('furniture_sets', [\App\Http\Controllers\ApiController::class, 'furniture_sets'])->name('furniture_sets');
+Route::get('furniture_types', [\App\Http\Controllers\ApiController::class, 'furniture_types'])->name('furniture_types');

@@ -15,17 +15,6 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
-
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-require __DIR__.'/auth.php';
+Route::get('/', fn() => Inertia::render('Dashboard', []))->name('/');
+Route::get('appartments', [\App\Http\Controllers\DashboardController::class, 'appartments'])->name('appartments');
+Route::get('locations', [\App\Http\Controllers\DashboardController::class, 'locations'])->name('locations');
